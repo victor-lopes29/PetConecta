@@ -1,0 +1,37 @@
+@page
+@model FrontPetConecta.Pages.Vendas.DeleteModel
+@{
+}
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-6">
+
+            <div class="formEdit">
+                <h3 class="">Deseja apagar essa Venda?</h3>
+
+                <div class="mt-3">
+                    <p><strong>ID da Venda: </strong>@Model.VendaModel.VendaId</p>
+                    <p><strong>Data: </strong>@Model.VendaModel.DataVenda</p>
+                    <p><strong>Funcionario Resposável: </strong>@Model.VendaModel.NomeFuncionario</p>
+                    <p><strong>Cliente: </strong>@Model.VendaModel.NomeCliente</p>
+                    <p><strong>Valor da Venda: </strong>@Model.VendaModel.TotalVenda</p>
+                    <p><strong>Produto Vendido: </strong>@Model.VendaModel.ProdutosVendidos</p>
+
+                </div>
+
+                <div class="mt-4">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="submit" value="Apagar" class="btn btn-create" />
+                            <a asp-page="Produtos" class="btn btn-delete">Retornar para a listagem</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 bg-custom">
+            <img src="~/images/gettyimages-700141990-e1688418771301.webp" class="img-fluid" alt="Image Description">
+        </div>
+    </div>
+</div>

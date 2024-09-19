@@ -1,0 +1,50 @@
+﻿@page
+@model FrontPetConecta.Pages.Clientes.DeleteModel
+@{
+}
+
+
+
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-6">
+
+          <div class="formEdit">
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                }
+
+                <h3 class="">Deseja apagar esse Cliente?</h3>
+
+                <div class="mt-3">
+                    <p><strong>Nome: </strong>@Model.ClienteModel.NomeCliente</p>
+                    <p><strong>Email: </strong>@Model.ClienteModel.EmailCliente</p>
+                    <p><strong>Telefone: </strong>@Model.ClienteModel.TelefoneCliente</p>
+                    <p><strong>Endereco: </strong>@Model.ClienteModel.EnderecoCliente</p>
+                    <p><strong>Tipo Pet: </strong>@Model.ClienteModel.TipoPet</p>
+
+                </div>
+
+                <div class="mt-4">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="submit" value="Apagar" class="btn btn-create" onclick="return confirm('Deseja realmente excluir este cliente?');" />
+                            <a asp-page="Clientes" class="btn btn-delete">Retornar para a listagem</a>
+                        </div>
+                    </form>
+                </div>
+          </div>
+          </div>
+        <div class="col-md-6 bg-custom">
+            <img src="~/images/Cadastro-cliente.png" class="img-fluid" alt="Image Description">
+        </div>
+    </div>
+</div>

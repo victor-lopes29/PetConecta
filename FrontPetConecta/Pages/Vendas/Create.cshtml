@@ -1,0 +1,56 @@
+﻿@page
+@model FrontPetConecta.Pages.Vendas.CreateModel
+@{
+    ViewData["Title"] = "Criar Nova Venda";
+}
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-6">
+            <div class="formEdit">
+                <h3 class="">Vamos criar uma nova Venda?</h3>
+
+                <form method="post">
+                    <div class="form-group">
+                        <label asp-for="ClienteId">Cliente</label>
+                        <select asp-for="ClienteId" asp-items="Model.ClienteSelectList" class="form-control">
+                            <option value="">Selecione um cliente</option>
+                        </select>
+                        <span asp-validation-for="ClienteId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FuncionarioId">Funcionário</label>
+                        <select asp-for="FuncionarioId" asp-items="Model.FuncionarioSelectList" class="form-control">
+                            <option value="">Selecione um funcionário</option>
+                        </select>
+                        <span asp-validation-for="FuncionarioId" class="text-danger"></span>
+                    </div>
+
+                    <!-- Adiciona um dropdown de produtos -->
+                    <div class="form-group">
+                        <label asp-for="ProdutoId">Produto</label>
+                        <select asp-for="ProdutoId" asp-items="Model.ProdutoSelectList" class="form-control">
+                            <option value="">Selecione um produto</option>
+                        </select>
+                        <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Quantidade"></label>
+                        <input asp-for="Quantidade" class="form-control" />
+                        <span asp-validation-for="Quantidade" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <input type="submit" class="btn btn-create" value="Salvar" />
+                        <a asp-page="Vendas" class="btn btn-delete">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 bg-custom">
+            <img src="~/images/2849824-basket-buy-market-multimedia-shop-shopping-store_107977.png" class="img-fluid" alt="Image Description">
+        </div>
+    </div>
+</div>
